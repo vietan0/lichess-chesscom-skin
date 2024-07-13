@@ -1,0 +1,19 @@
+{
+  "type": "module",
+  "scripts": {
+    "lint": "eslint .",
+    "start:firefox": "web-ext run --devtools --start-url www.chess.com"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.22.0",
+    "eslint": "^9.6.0",
+    "web-ext": "^8.2.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowedVersions": {
+        "eslint": "9"
+      }
+    }
+  }
+}

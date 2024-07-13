@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Lichess - Chess.com sound effects",
+  "version": "1.0",
+  "description": "Replace Lichess's sound effects with Chess.com's",
+  "icons": {
+    "48": "icons/lichess-favicon-512.png"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://lichess.org/*",
+    "*://lichess1.org/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["*://lichess.org/*"],
+    "js": ["content.js"],
+    "run_at": "document_end"
+  }]
+}
