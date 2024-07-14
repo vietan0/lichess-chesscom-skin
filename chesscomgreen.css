@@ -1,0 +1,8 @@
+body[data-board="green"] .is2d cg-board::before {
+  background-image: url("chesscomgreen.svg");
+}
+
+body[data-board="green"] .is2d square.last-move {
+  background-color: rgb(255, 255, 51);
+  opacity: 0.5;
+}

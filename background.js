@@ -40,3 +40,14 @@ browser.webRequest.onBeforeRequest.addListener(
   },
   ['blocking'],
 );
+
+// redirect board svg request
+browser.webRequest.onBeforeRequest.addListener(
+  () => ({ redirectUrl: browser.runtime.getURL('/chesscomgreen.svg') }),
+  {
+    urls: [
+      'https://lichess1.org/assets/images/board/svg/green.svg',
+    ],
+  },
+  ['blocking'],
+);

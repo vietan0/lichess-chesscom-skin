@@ -15,5 +15,14 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "web_accessible_resources": ["sound/*"]
+  "content_scripts": [
+    {
+      "matches": ["*://lichess.org/*"],
+      "css": ["chesscomgreen.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    "sound/*",
+    "chesscomgreen.svg"
+  ]
 }
