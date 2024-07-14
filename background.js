@@ -1,48 +1,42 @@
-console.log('background script say heyo');
+// redirect sound file requests
+browser.webRequest.onBeforeRequest.addListener(
+  (req) => {
+    let redirectUrl = '';
 
-browser.runtime.onMessage.addListener((message) => {
-  if (message === 'redirect-sound-fx-requests') {
-    browser.webRequest.onBeforeRequest.addListener(
-      async (requestDetails) => {
-        if (requestDetails.url.includes('Move')) {
-          return {
-            redirectUrl: 'http://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-self.mp3',
-          };
-        }
+    if (req.url.includes('Move')) {
+      redirectUrl = browser.runtime.getURL('/sound/move-self.mp3');
+    }
 
-        if (requestDetails.url.includes('Capture')) {
-          return {
-            redirectUrl: 'http://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/capture.mp3',
-          };
-        }
+    if (req.url.includes('Capture')) {
+      redirectUrl = browser.runtime.getURL('/sound/capture.mp3');
+    }
 
-        if (requestDetails.url.includes('Check')) {
-          return {
-            redirectUrl: 'http://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-check.mp3',
-          };
-        }
+    if (req.url.includes('Check')) {
+      redirectUrl = browser.runtime.getURL('/sound/move-check.mp3');
+    }
 
-        if (requestDetails.url.includes('GenericNotify')) {
-          return {
-            redirectUrl: 'http://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/notify.mp3',
-          };
-        }
+    if (req.url.includes('GenericNotify')) {
+      redirectUrl = browser.runtime.getURL('/sound/game-start.mp3');
+    }
 
-        if (requestDetails.url.includes('LowTime')) {
-          return {
-            redirectUrl: 'http://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/tenseconds.mp3',
-          };
-        }
-        // 'Defeat'
-      },
-      {
-        urls: [
-          '*://lichess1.org/assets/______1/sound/standard/*.mp3',
-        ],
-      },
-      ['blocking'],
-    );
+    if (req.url.includes('LowTime')) {
+      redirectUrl = browser.runtime.getURL('/sound/tenseconds.mp3');
+    }
 
-    console.log('Redirect listeners added');
-  }
-});
+    if (req.url.includes('Victory')) {
+      redirectUrl = browser.runtime.getURL('/sound/game-end.mp3');
+    }
+
+    if (req.url.includes('Defeat')) {
+      redirectUrl = browser.runtime.getURL('/sound/game-end.mp3');
+    }
+
+    return { redirectUrl };
+  },
+  {
+    urls: [
+      '*://lichess1.org/assets/______1/sound/*/*.mp3',
+    ],
+  },
+  ['blocking'],
+);

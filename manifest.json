@@ -15,9 +15,5 @@
   "background": {
     "scripts": ["background.js"]
   },
-  "content_scripts": [{
-    "matches": ["*://lichess.org/*"],
-    "js": ["content.js"],
-    "run_at": "document_end"
-  }]
+  "web_accessible_resources": ["sound/*"]
 }

@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint .",
-    "start:firefox": "web-ext run --devtools --start-url www.chess.com"
+    "start:firefox": "web-ext run --devtools --start-url lichess.org"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.22.0",
