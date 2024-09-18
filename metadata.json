@@ -1,0 +1,24 @@
+{
+  "version": {
+    "license": "MPL-2.0"
+  },
+  "homepage": {
+    "en-US": "https://github.com/vietan0/lichess-chesscom-skin"
+  },
+  "categories": {
+    "firefox": [
+      "appearance",
+      "games-entertainment"
+    ]
+  },
+  "description": {
+    "en-US": "Replace Lichess's board, pieces & sound effects with Chess.com's"
+  },
+  "developer_comments": {
+    "en-US": "This extension modify Lichess's board appearances & sound effects"
+  },
+  "requires_payment": false,
+  "support_email": {
+    "en-US": "tiktaktictac269@gmail.com"
+  }
+}

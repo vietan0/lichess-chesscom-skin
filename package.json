@@ -1,8 +1,14 @@
 {
   "type": "module",
+  "version": "1.0.0",
   "scripts": {
+    "build": "web-ext build",
     "lint": "eslint .",
+    "sign": "node sign.js",
     "start:firefox": "web-ext run --devtools --start-url lichess.org"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.22.0",
