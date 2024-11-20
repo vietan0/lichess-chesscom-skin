@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Chess.com Skin for Lichess",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Replace Lichess's board, pieces & sound effects with Chess.com's",
   "icons": {
     "48": "icons/chesscom.png"
