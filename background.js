@@ -35,7 +35,7 @@ browser.webRequest.onBeforeRequest.addListener(
   },
   {
     urls: [
-      '*://lichess1.org/assets/______1/sound/*/*.mp3',
+      '*://lichess1.org/assets/*/*.mp3',
     ],
   },
   ['blocking'],
