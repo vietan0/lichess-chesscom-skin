@@ -5,7 +5,8 @@
     "build": "web-ext build",
     "lint": "eslint .",
     "sign": "web-ext sign",
-    "start:firefox": "web-ext run --devtools"
+    "start:firefox": "web-ext run --devtools",
+    "version": "node version.js && git add . && npm run build"
   },
   "dependencies": {
     "dotenv": "^17.2.2"
