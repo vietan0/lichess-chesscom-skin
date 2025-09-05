@@ -4,7 +4,7 @@
   "version": "1.0.4",
   "description": "Replace Lichess's board, pieces & sound effects with Chess.com's",
   "icons": {
-    "48": "icons/logo.png"
+    "128": "icons/logo.png"
   },
   "permissions": [
     "webRequest",
@@ -13,12 +13,18 @@
     "*://lichess1.org/*"
   ],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": [
+      "background.js"
+    ]
   },
   "content_scripts": [
     {
-      "matches": ["*://lichess.org/*"],
-      "css": ["style.css"]
+      "matches": [
+        "*://lichess.org/*"
+      ],
+      "css": [
+        "style.css"
+      ]
     }
   ],
   "web_accessible_resources": [

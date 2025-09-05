@@ -1,3 +1,5 @@
+import browser from 'webextension-polyfill';
+
 // redirect sound file requests
 browser.webRequest.onBeforeRequest.addListener(
   (req) => {
