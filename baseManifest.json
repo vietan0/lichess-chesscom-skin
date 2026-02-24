@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Chess.com Skin for Lichess",
+  "version": "1.0.4",
+  "homepage_url": "https://github.com/vietan0/lichess-chesscom-skin",
+  "description": "Replace Lichess's board, pieces & sound effects with Chess.com's",
+  "icons": {
+    "128": "assets/icons/logo.png"
+  },
+  "permissions": ["declarativeNetRequestWithHostAccess"],
+  "host_permissions": ["*://lichess.org/*", "*://lichess1.org/*"],
+  "background": {
+    "scripts": ["background.js"],
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://lichess.org/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/*"],
+      "matches": ["*://lichess.org/*", "*://lichess1.org/*"]
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{57eea92c-cc20-467f-8f9e-cef04e42cec2}"
+    }
+  }
+}
