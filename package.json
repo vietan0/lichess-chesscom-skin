@@ -7,24 +7,32 @@
     "build:chrome": "rm -rf dist/chrome && pnpm run build --environment BROWSER:chrome",
     "dev:firefox": "cd dist/firefox && web-ext run --config=../../web-ext-config.mjs --devtools",
     "dev:chrome": "cd dist/chrome && web-ext run --config=../../web-ext-config.mjs -t chromium --args='--auto-open-devtools-for-tabs'",
-    "ext-build": "web-ext build",
-    "lint": "eslint .",
-    "sign": "web-ext sign",
+        "lint": "eslint .",
+    "sign": "cd dist/firefox && web-ext sign --config=../../web-ext-config.mjs",
+    "version": "node version.js && git add . && npm run build",
     "watch:firefox": "pnpm run build:firefox -w",
     "watch:chrome": "pnpm run build:chrome -w",
-    "version": "node version.js && git add . && npm run build"
+    "wlint": "cd dist/firefox && web-ext lint",
+    "zip:firefox": "cd dist/firefox && web-ext build --config=../../web-ext-config.mjs",
+    "zip:chrome": "tsx zip-chrome.ts",
+    "upload:chrome": "tsx upload-chrome.ts"
   },
   "dependencies": {
-    "dotenv": "^17.2.2"
+    "adm-zip": "^0.5.16",
+    "chrome-webstore-upload-cli": "^3.5.0",
+    "dotenv": "^17.2.2",
+    "glob": "^13.0.6"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^5.2.2",
+    "@types/adm-zip": "^0.5.7",
     "@types/webextension-polyfill": "^0.12.4",
     "eslint": "^9.34.0",
     "eslint-plugin-format": "^1.0.1",
     "rolldown": "1.0.0-rc.1",
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-delete": "^3.0.2",
+    "tsx": "^4.21.0",
     "web-ext": "^8.9.0",
     "webextension-polyfill": "^0.12.0"
   },
