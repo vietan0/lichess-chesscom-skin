@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config({ path: '../../.env' });
 
 export default {
+  artifactsDir: '../../web-ext-artifacts',
   run: {
     startUrl: ['lichess.org/fsZPze1jz8a5'],
     firefoxProfile: 'ext-dev',
