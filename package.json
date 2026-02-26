@@ -1,13 +1,13 @@
 {
   "type": "module",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "scripts": {
     "build": "rolldown -c rolldown.config.ts",
     "build:firefox": "rm -rf dist/firefox && pnpm run build --environment BROWSER:firefox",
     "build:chrome": "rm -rf dist/chrome && pnpm run build --environment BROWSER:chrome",
     "dev:firefox": "cd dist/firefox && web-ext run --config=../../web-ext-config.mjs --devtools",
     "dev:chrome": "cd dist/chrome && web-ext run --config=../../web-ext-config.mjs -t chromium --args='--auto-open-devtools-for-tabs'",
-        "lint": "eslint .",
+    "lint": "eslint .",
     "sign": "cd dist/firefox && web-ext sign --config=../../web-ext-config.mjs",
     "version": "node version.js && git add . && npm run build",
     "watch:firefox": "pnpm run build:firefox -w",

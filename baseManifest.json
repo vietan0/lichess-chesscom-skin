@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Chess.com Skin for Lichess",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "homepage_url": "https://github.com/vietan0/lichess-chesscom-skin",
   "description": "Replace Lichess's board, pieces & sound effects with Chess.com's",
   "icons": {
